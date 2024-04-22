@@ -1,0 +1,39 @@
+input[type="text"]{
+    padding: 10px 30px;
+    background-color: red;
+    font-size: 20px;
+    border-radius: 25px;
+}
+.input-sec{
+    width: 400px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+}
+button{
+    padding: 14px 15px;
+    margin-left: 10px;
+    background-color: black;
+    color: tomato;
+    border-radius: 50px;
+}
+.tasks{
+
+   margin-left: 10px;
+    font-size: 1.3rem;
+}
+#task-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    background-color: bisque;
+    border: 2px solid black;
+    margin-top: 2px;
+}
+.taskRemover{
+    margin-right: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}

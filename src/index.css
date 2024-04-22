@@ -1,32 +1,7 @@
-.parentComp{
-    height: 500px;
-    width: 600px;
-    display: flex;
-    align-items: center;
-    justify-content:center;
+.parent{
+    height: 100%;
+    width: 100%
+}
+.beta{
     background-color: black;
-    color: white;
-    flex-direction: column;
-    margin: 50px auto;
-}
-.childComp{
-    height: 30%;
-    width: 50%;
-    background-color: tomato;
-    color: black;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    
-
-}
-button {
-    padding: 5px 10px;
-    display: block;
-    margin: 5px auto;
-  
-}
-input{
-    padding: 5px 6px;
 }
