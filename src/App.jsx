@@ -1,42 +1,23 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import "./App.css";
 
 let App = () => {
- let [userName , setUserName] = useState("")
- let [name, setName] = useState("")
- let [userObj , setUserObj] = useState([])
- let formSubmitted =(e) => {
-  e.preventDefault();
-  setName("Welcome "+userName)
-  let newObj = {name : userName}
-  setUserObj([...userObj,newObj]) // To store muliple users data object in array
-  console.log(newObj)
-  setUserName("") 
-  // clearing most recent input value on submission
-}
+ let[count , setCount] = useState(0)
+ let [count1 , setCount1]= useState(0)
+ // Updating title of web tab
+ useEffect(()=>{
+ if(count>=1){
+  document.title = `Chat-{${count}}` // updating title in real time on btn click
+ }else{
+  document.title = "Chat"
+ }
+ },[count])
+
   return (
     <>
-    <form onSubmit={formSubmitted}>
-      <label htmlFor="name">Name </label>
-      <input type="text" id="name" 
-      value={userName}
-      onChange={(e)=>setUserName(e.target.value)}
-      autoComplete="off"
-      ></input>
-      <button type="submit">Submit</button>
-    </form>
-        <h1>{name}</h1>
-        {/* OR */}
-        {/* {
-          userObj.map((data,id)=>{
-            return(
-              <div key={id}>
-                <h1>{data.name}</h1>
-              </div>
-             
-            )
-          })
-        } */}
+       <button onClick={()=>setCount(count+1)}>Click {count}</button>
+       <button onClick={()=>setCount1(count1+1)}>Click {count1}</button>
+      
     </>
   )
   }
