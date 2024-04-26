@@ -1,46 +1,45 @@
-import { useState , useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 
 let App = () => {
-  let [userEmail , setUserEmail] = useState("")
-  let [pass , setPass] = useState("")
-  let [userObj , setUserObj] =useState([])
-  function dataSubmit(e){
-    e.preventDefault();
-    //preventing unnessesary rendering of comp on submit the form for fetching data
-    let dataObj = {email : userEmail , password : pass}  
-    setUserObj([...userObj,dataObj])
-    console.log(dataObj)
-    
-  }
+ let [userName , setUserName] = useState("")
+ let [name, setName] = useState("")
+ let [userObj , setUserObj] = useState([])
+ let formSubmitted =(e) => {
+  e.preventDefault();
+  setName("Welcome "+userName)
+  let newObj = {name : userName}
+  setUserObj([...userObj,newObj]) // To store muliple users data object in array
+  console.log(newObj)
+  setUserName("") 
+  // clearing most recent input value on submission
+}
   return (
     <>
-      
-      <form onSubmit={dataSubmit}>
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" id="email"
-        onChange={(e)=>setUserEmail(e.target.value)}
-        value={userEmail}
-        ></input> <br></br>
-        <label htmlFor="password">Password</label>
-        <input type="text" name="password" id="password"
-        onChange={(e)=>setPass(e.target.value)}
-        value={pass}
-        autoComplete="off"
-        ></input>
-        <button type="submit">Submit</button>
-      </form>
-      {
-        userObj.map((data)=>{
-          return(
-            <>
-              <h1>Welcome {data.email}</h1>
-            </>
-          )
-        })
-      }
+    <form onSubmit={formSubmitted}>
+      <label htmlFor="name">Name </label>
+      <input type="text" id="name" 
+      value={userName}
+      onChange={(e)=>setUserName(e.target.value)}
+      autoComplete="off"
+      ></input>
+      <button type="submit">Submit</button>
+    </form>
+        <h1>{name}</h1>
+        {/* OR */}
+        {/* {
+          userObj.map((data,id)=>{
+            return(
+              <div key={id}>
+                <h1>{data.name}</h1>
+              </div>
+             
+            )
+          })
+        } */}
     </>
-  );
-};
+  )
+  }
+  
 
 export default App;
