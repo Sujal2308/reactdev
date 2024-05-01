@@ -1,3 +1,21 @@
-button{
-    padding: 10px 20px;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.content-container{
+    width: 300px;
+    height: 100px;
+    border : 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    
+}
+.card-img{
+    width: 50px;
+    height: 60px;
 }
